@@ -1,3 +1,5 @@
+# File này dùng để tạo thông tin cho module của mình
+
 {
     'name': 'School Management',
     'version': '1.0',
