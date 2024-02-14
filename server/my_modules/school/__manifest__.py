@@ -11,7 +11,7 @@
         # 'other_module'
     ],
     'data': [
-        # 'views/my_view.xml',
+        'views/school_information_views.xml',
         # 'data/demo_data.xml',
     ],
     'installable': True,
