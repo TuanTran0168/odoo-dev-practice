@@ -11,6 +11,7 @@
         # 'other_module'
     ],
     'data': [
+        'security/ir.model.access.csv',
         'views/school_information_views.xml',
         # 'data/demo_data.xml',
     ],

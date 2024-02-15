@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
+        <!--Ủa tại sao chưa nhấn dô action mà cái form view nó hiện lên luôn z trời-->
 
         <!-- Tạo action cho menuitem -->
         <record id="action_school_information" model="ir.actions.act_window">
             <field name="name">School Information</field>
             <field name="res_model">school.information</field>
-            <field name="view_mode">form</field>
+            <field name="view_mode">tree,form</field>
             <field name="view_id" ref="view_information_form"/>
+            <field name="help" type="html">
+                <p>Tạo trường học đi</p>
+            </field>
         </record>
 
         <menuitem id="school_menu_root" name="School" active="True" sequence="1"/>
@@ -20,12 +24,16 @@
             <field name="arch" type="xml">
                 <form>
                     <sheet>
-                        <div>Hello</div>
+                        <group>
+                            <field name="name"/>
+                            <field name="type"/>
+                            <field name="email"/>
+                            <field name="address"/>
+                        </group>
                     </sheet>
                 </form>
             </field>
         </record>
-
 
     </data>
 </odoo>
