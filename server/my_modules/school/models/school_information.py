@@ -10,7 +10,7 @@ class SchoolInformation(models.Model):
 
     # Đây mới là các fields của bảng nè
     name = fields.Char(string="Tên trường học") # Cái string ở trong này là để hiển thị lên giao diện
-    type = fields.Selection([
+    type = fields.Selection(selection=[
         # (value, option),
         ("private", "Dân lập"),
         ("public", "Công lập")
