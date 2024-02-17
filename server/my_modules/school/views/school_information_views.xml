@@ -1,24 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!--Ủa tại sao chưa nhấn dô action mà cái form view nó hiện lên luôn z trời-->
-
         <!-- Tạo action cho menuitem -->
-        <record id="action_school_information" model="ir.actions.act_window">
+        <record id="action_school_root" model="ir.actions.act_window">
             <field name="name">School Information</field>
             <field name="res_model">school.information</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="view_information_form"/>
+            <field name="view_id" ref="view_information_list_view"/>
             <field name="help" type="html">
-                <p>Tạo trường học đi</p>
+                <p class="o_view_nocontent_smiling_face">
+                    TẠO TRƯỜNG HỌC ĐI
+                </p>
             </field>
         </record>
 
-        <menuitem id="school_menu_root" name="School" active="True" sequence="1"/>
-        <menuitem id="school_menu" name="School Information" active="True" parent="school_menu_root"
-                  action="action_school_information" sequence="2"/>
+        <record id="action_create_school" model="ir.actions.act_window">
+            <field name="name">Create School</field>
+            <field name="res_model">school.information</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_information_form_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Tạo trường học đi
+                </p>
+            </field>
+        </record>
 
-        <record id="view_information_form" model="ir.ui.view">
+        <menuitem id="school_menu_root" name="School" sequence="1" action="action_school_root"/>
+        <menuitem id="school_menu" name="School Information" parent="school_menu_root"
+                  action="action_create_school" sequence="2"/>
+        <menuitem id="school_menu_1" name="test_menu" parent="school_menu_root"
+                  action="action_create_school" sequence="3"/>
+
+        <!--Cái id này phải đặt đúng tên _list_view, chớ không nó không có hiểu đâu -->
+        <record id="view_information_list_view" model="ir.ui.view">
+            <field name="name">School Information List View By Tuan Tran</field>
+            <field name="model">school.information</field>
+            <field name="arch" type="xml">
+                <!-- Nếu thêm  editable="top" vào trong thẻ <tree></tree>
+                    thì sẽ được sửa trực tiếp trên list view
+                    NHƯNG nó sẽ không chuyển đến xem detail được
+                    được này mất kia.
+                    -->
+                <tree string="Danh sách trường">
+                    <field name="name" optional="show"/>
+                    <field name="type" optional="show"/>
+                    <field name="email" optional="show"/>
+                    <field name="address" optional="show"/>
+                    <field name="hasOnlineClass" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Cái id này phải đặt đúng tên _form_view, chớ không nó không có hiểu đâu -->
+        <record id="view_information_form_view" model="ir.ui.view">
             <field name="name">School Information Form By Tuan Tran</field>
             <field name="model">school.information</field>
             <field name="arch" type="xml">
@@ -29,11 +64,16 @@
                             <field name="type"/>
                             <field name="email"/>
                             <field name="address"/>
+                            <field name="hasOnlineClass"/>
+                        </group>
+
+                        <group>
+                            <field name="document" filename="document_name"/>
+                            <field name="document_name" invisible="1"/>
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
-
     </data>
 </odoo>

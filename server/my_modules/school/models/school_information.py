@@ -9,7 +9,7 @@ class SchoolInformation(models.Model):
     _description = "School Information Tuan Tran"
 
     # Đây mới là các fields của bảng nè
-    name = fields.Char(string="Tên trường học")
+    name = fields.Char(string="Tên trường học") # Cái string ở trong này là để hiển thị lên giao diện
     type = fields.Selection([
         # (value, option),
         ("private", "Dân lập"),
@@ -17,6 +17,12 @@ class SchoolInformation(models.Model):
     ], default="public", string="Loại trường")
     email = fields.Text(string="Email")
     address = fields.Text(string="Địa chỉ")
+    phone_number = fields.Char(string="Số điện thoại")
+    hasOnlineClass = fields.Boolean(string="Có lớp hoạt động không?")
+    rank = fields.Integer(string="Xếp hạng")
+    establish_day = fields.Date(string="Ngày thành lập")
+    document = fields.Binary(string="Tài liệu về trường")
+    document_name = fields.Char(string="Tên tài liệu")
 
     # CÒN 1 VÀI AUTOMATIC FIELDS TRÊN DOCUMENTS NỮA (nó sẽ TỰ ĐỘNG tạo cho mình)
     # Không ưng thì tắt mà chưa biết tắt sao :)))
