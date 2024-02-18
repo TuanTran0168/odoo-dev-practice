@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_student_root" model="ir.actions.act_window">
+            <field name="name">Student Information</field>
+            <field name="res_model">student.information</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="view_information_list_view"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    TẠO HỌC SINH ĐI
+                </p>
+            </field>
+        </record>
+
+<!--        <record id="action_create_student" model="ir.actions.act_window">-->
+<!--            <field name="name">Create Student</field>-->
+<!--            <field name="res_model">student.information</field>-->
+<!--            <field name="view_mode">tree,form</field>-->
+<!--            <field name="view_id" ref="view_information_form_view"/>-->
+<!--            <field name="help" type="html">-->
+<!--                <p class="o_view_nocontent_smiling_face">-->
+<!--                    Tạo học sinh đi-->
+<!--                </p>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <!--Chỗ school.school_menu_root kiểu như tham chiếu tới cái menuitem bên module school-->
+        <menuitem id="class_menu" name="Student Information" parent="school.school_menu_root"
+                  action="action_student_root" sequence="4"/>
+
+        <!--Cái id này phải đặt đúng tên _list_view, chớ không nó không có hiểu đâu -->
+        <record id="view_information_list_view" model="ir.ui.view">
+            <field name="name">Student Information List View By Tuan Tran</field>
+            <field name="model">student.information</field>
+            <field name="arch" type="xml">
+                <tree editable="top" string="Danh sách học sinh">
+                    <field name="name" optional="show"/>
+                    <field name="birthday" optional="show"/>
+                    <field name="class_id" optional="show"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--Cái id này phải đặt đúng tên _form_view, chớ không nó không có hiểu đâu -->
+        <record id="view_information_form_view" model="ir.ui.view">
+            <field name="name">Student Information Form By Tuan Tran</field>
+            <field name="model">student.information</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name" optional="show"/>
+                            <field name="birthday" optional="show"/>
+                            <field name="class_id" optional="show"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>
