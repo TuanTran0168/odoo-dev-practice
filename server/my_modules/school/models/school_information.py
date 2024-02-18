@@ -24,6 +24,8 @@ class SchoolInformation(models.Model):
     document = fields.Binary(string="Tài liệu về trường")
     document_name = fields.Char(string="Tên tài liệu")
 
+    # class_set = fields.One2many(comodel_name="class.information", inverse_name="school_id", string="Danh sách lớp")
+
     # CÒN 1 VÀI AUTOMATIC FIELDS TRÊN DOCUMENTS NỮA (nó sẽ TỰ ĐỘNG tạo cho mình)
     # Không ưng thì tắt mà chưa biết tắt sao :)))
     # id (Id)

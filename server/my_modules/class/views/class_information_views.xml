@@ -56,6 +56,22 @@
                             <field name="main_teacher"/>
                             <field name="school_id"/>
                         </group>
+                        <group>
+<!--                            <field name="student_set">-->
+<!--                                <tree>-->
+<!--                                    <field name="name" optional="show"/>-->
+<!--                                    <field name="birthday" optional="show"/>-->
+<!--                                    <field name="class_id" optional="show"/>-->
+<!--                                </tree>-->
+<!--                                <form>-->
+<!--                                    <sheet>-->
+<!--                                        <field name="name" optional="show"/>-->
+<!--                                        <field name="birthday" optional="show"/>-->
+<!--                                        <field name="class_id" optional="show"/>-->
+<!--                                    </sheet>-->
+<!--                                </form>-->
+<!--                            </field>-->
+                        </group>
                     </sheet>
                 </form>
             </field>

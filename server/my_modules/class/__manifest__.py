@@ -7,9 +7,8 @@
     'summary': 'Used for class management',
     'description': 'Used for class management',
     'depends': [
-        # 'base',
-        # 'other_module'
-        "school"  # Tham chiếu khóa ngoại ở models thì khai báo ở đây, dính bug tốn hơn 30p của toi
+        "school",  # Tham chiếu khóa ngoại ở models thì khai báo ở đây, dính bug tốn hơn 30p của toi
+        # "student"
     ],
     'data': [
         'security/ir.model.access.csv',

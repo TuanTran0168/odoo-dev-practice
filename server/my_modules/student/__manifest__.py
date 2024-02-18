@@ -7,8 +7,6 @@
     'summary': 'Used for student management',
     'description': 'Used for student management',
     'depends': [
-        # 'base',
-        # 'other_module'
         "class"
     ],
     'data': [

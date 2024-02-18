@@ -7,8 +7,10 @@
     'summary': 'Used for school management',
     'description': 'Used for school management',
     'depends': [
-        # 'base',
-        # 'other_module'
+        # "class" # Nếu mở cái này ra thì sẽ dính cái lỗi ở dưới, trông như bị đệ quy 2 cái depends giữa 2 models
+        # Vì bên models của class cũng có depend school
+        # ERROR odoo-db odoo.modules.loading:
+        # Some modules have inconsistent states, some dependencies may be missing: ['class', 'school', 'student']
     ],
     'data': [
         'security/ir.model.access.csv',
