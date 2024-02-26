@@ -10,6 +10,7 @@ class StudentInformation(models.Model):
     class_id = fields.Many2one("class.information", string="Lớp", required=True)
 
 
+
 # class ClassInformation(models.Model):
 #     _inherit = "class.information" # Kế thừa nè
 #

@@ -10,6 +10,8 @@ class ClassInformation(models.Model):
     main_teacher = fields.Char(string="Giáo viên chủ nhiệm")
     school_id = fields.Many2one("school.information", string="Trường")
 
+    # student_set = fields.One2many(comodel_name="student.information", inverse_name="class_id",
+    #                               string="Danh sách học sinh")
 
 # Khai báo bên này á thì lỗi không tìm thấy model student, do chưa có trong depends
 # Mà thêm dô depends cái student rồi thì lại lỗi đệ quy

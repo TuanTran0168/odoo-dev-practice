@@ -13,21 +13,9 @@
             </field>
         </record>
 
-        <record id="action_create_class" model="ir.actions.act_window">
-            <field name="name">Create Class</field>
-            <field name="res_model">class.information</field>
-            <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="view_information_form_view"/>
-            <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face">
-                    Tạo lớp học đi
-                </p>
-            </field>
-        </record>
-
         <!--Chỗ school.school_menu_root kiểu như tham chiếu tới cái menuitem bên module school-->
         <menuitem id="class_menu" name="Class Information" parent="school.school_menu_root"
-                  action="action_class_root" sequence="3"/>
+                  action="action_class_root" sequence="2"/>
 
         <!--Cái id này phải đặt đúng tên _list_view, chớ không nó không có hiểu đâu -->
         <record id="view_information_list_view" model="ir.ui.view">
@@ -40,40 +28,6 @@
                     <field name="main_teacher" optional="show"/>
                     <field name="school_id" optional="show"/>
                 </tree>
-            </field>
-        </record>
-
-        <!--Cái id này phải đặt đúng tên _form_view, chớ không nó không có hiểu đâu -->
-        <record id="view_information_form_view" model="ir.ui.view">
-            <field name="name">Class Information Form By Tuan Tran</field>
-            <field name="model">class.information</field>
-            <field name="arch" type="xml">
-                <form>
-                    <sheet>
-                        <group>
-                            <field name="name"/>
-                            <field name="grade"/>
-                            <field name="main_teacher"/>
-                            <field name="school_id"/>
-                        </group>
-                        <group>
-<!--                            <field name="student_set">-->
-<!--                                <tree>-->
-<!--                                    <field name="name" optional="show"/>-->
-<!--                                    <field name="birthday" optional="show"/>-->
-<!--                                    <field name="class_id" optional="show"/>-->
-<!--                                </tree>-->
-<!--                                <form>-->
-<!--                                    <sheet>-->
-<!--                                        <field name="name" optional="show"/>-->
-<!--                                        <field name="birthday" optional="show"/>-->
-<!--                                        <field name="class_id" optional="show"/>-->
-<!--                                    </sheet>-->
-<!--                                </form>-->
-<!--                            </field>-->
-                        </group>
-                    </sheet>
-                </form>
             </field>
         </record>
     </data>
